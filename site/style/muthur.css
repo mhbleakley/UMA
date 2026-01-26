@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "Hyperspace";
+    src: url("fonts/hyperspace/Hyperspace.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Hyperspace";
+    background-color: black;
+    color: #00ff00;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+li {
+    font-size: 16px;
+}
+
+b {
+    font-size: 24px;
+}
+
+.events ul{
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.events ul li {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+body.dark {
+    background-color: black;
+    color: orange;
+}
+
+body.dark .columns-container {
+    color: orange;
+}
+
+.columns-container {
+    display: flex;
+    width: 100%;
+}
+
+.columns-container>div {
+    flex: 1;
+    /* each takes equal space */
+    max-width: 25%;
+    /* optional: ensure 25% */
+    box-sizing: border-box;
+    /* include padding/border in width */
+    padding: 0 5px;
+    /* optional horizontal spacing */
+}

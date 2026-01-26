@@ -1,0 +1,98 @@
+@font-face {
+    font-family: "OldLondon";
+    src: url("fonts/old_london/OldLondon.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "IMFell";
+    src: url("fonts/IMFell/IM\ Fell\ English/FeENrm2.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+  cursor: none;
+}
+
+body {
+    font-family: "IMFell";
+    background-color: #f2dab6;
+    color: #4C372F;
+}
+
+h1 {
+    font-family: "OldLondon";
+    font-size: 40px;
+    line-height: 100%;
+    margin: 10px;
+}
+
+ul {
+    margin:14px;
+}
+
+li {
+    font-size: 22px;
+    margin: 6px;
+    line-height: 120%;
+}
+
+span {
+    font-size: 32px;
+    margin: 8px;
+}
+
+b {
+    font-size: 20px;
+}
+
+.events ul{
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.events ul li {
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 16px;
+}
+
+.events ul li b {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 18;
+}
+
+body.dark {
+    background-color: #0e1114;
+    color: #e8e6df;
+}
+
+body.dark .columns-container {
+    color: #e8e6df;
+}
+
+
+.columns-container {
+    display: flex;
+    width: 100%;
+    /* full width of parent */
+    font-size: 26px;
+}
+
+.columns-container>div {
+    flex: 1;
+    /* each takes equal space */
+    max-width: 25%;
+    /* optional: ensure 25% */
+    box-sizing: border-box;
+    /* include padding/border in width */
+    padding: 0 5px;
+    /* optional horizontal spacing */
+}

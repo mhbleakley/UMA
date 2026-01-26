@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "norse";
+    src: url("fonts/norse/Norse.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "norse";
+    background-color: #20212b;
+    color: #8588a2;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+li {
+    font-size: 20px;
+}
+
+b {
+    font-size: 24px;
+}
+
+.events ul{
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.events ul li {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+body.dark {
+    background-color: black;
+    color: #8588a2;
+}
+
+body.dark .columns-container {
+    color: #8588a2;
+}
+
+
+.columns-container {
+    display: flex;
+    width: 100%;
+}
+
+.columns-container>div {
+    flex: 1;
+    /* each takes equal space */
+    max-width: 25%;
+    /* optional: ensure 25% */
+    box-sizing: border-box;
+    /* include padding/border in width */
+    padding: 0 5px;
+    /* optional horizontal spacing */
+}

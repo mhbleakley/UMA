@@ -1,0 +1,71 @@
+@font-face {
+    font-family: "wolfenstein";
+    src: url("fonts/wolfenstein/wolfenstein.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "badwolf";
+    src: url("fonts/badwolf/badwolf.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "badwolf";
+    background-color: white;
+    color: red;
+}
+
+h1 {
+    font-family: "wolfenstein";
+    font-size: 48px;
+    padding: 0%;
+    margin: 0;
+}
+
+li {
+    font-size: 22px;
+}
+
+b {
+    font-size: 24px;
+}
+
+.events ul{
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.events ul li {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+body.dark {
+    background-color: black;
+    color: red;
+}
+
+body.dark .columns-container {
+    color: red;
+}
+
+
+.columns-container {
+    display: flex;
+    width: 100%;
+}
+
+.columns-container>div {
+    flex: 1;
+    /* each takes equal space */
+    max-width: 25%;
+    /* optional: ensure 25% */
+    box-sizing: border-box;
+    /* include padding/border in width */
+    padding: 0 5px;
+    /* optional horizontal spacing */
+}

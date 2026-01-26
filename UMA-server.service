@@ -1,0 +1,13 @@
+[Unit]
+Description=UMA HTTP Server
+After=network.target
+
+[Service]
+Type=simple
+User=martin
+WorkingDirectory=/home/martin/UMA/site
+ExecStart=/home/martin/UMA/venv/bin/python -m http.server 8000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

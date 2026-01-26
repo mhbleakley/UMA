@@ -1,0 +1,8 @@
+/venv
+/old
+.env
+credentials.json
+token.json
+/__pycache__
+**state.json
+rsync_command.txt

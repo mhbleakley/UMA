@@ -1,0 +1,15 @@
+[Unit]
+Description=starts chromium for UMA
+After=multi-user.target
+StartLimitIntervalSec=10
+StartLimitBurst=5
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+User=martin
+ExecStart=/usr/bin/bash /home/martin/UMA/start-chromium.sh
+
+[Install]
+WantedBy=multi-user.target

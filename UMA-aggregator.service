@@ -1,0 +1,13 @@
+[Unit]
+Description=UMA Aggregator
+After=network.target
+
+[Service]
+Type=simple
+User=martin
+ExecStart=/home/martin/UMA/venv/bin/python /home/martin/UMA/aggregator.py
+Restart=always
+WorkingDirectory=/home/martin/UMA
+
+[Install]
+WantedBy=multi-user.target
