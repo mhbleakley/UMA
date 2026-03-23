@@ -7,6 +7,7 @@ Type=simple
 User=martin
 ExecStart=/home/martin/UMA/venv/bin/python /home/martin/UMA/aggregator.py
 Restart=always
+RestartSec=10
 WorkingDirectory=/home/martin/UMA
 
 [Install]

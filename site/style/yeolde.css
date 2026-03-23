@@ -12,6 +12,11 @@
     font-style: normal;
 }
 
+:root {
+  --fg: #4C372F;
+  --bg: #bc9f73;
+}
+
 html {
   height: 100%;
   overflow: hidden;
@@ -20,8 +25,8 @@ html {
 
 body {
     font-family: "IMFell";
-    background-color: #f2dab6;
-    color: #4C372F;
+    background-color: var(--bg);
+    color: var(--fg);
 }
 
 h1 {
@@ -41,9 +46,10 @@ li {
     line-height: 120%;
 }
 
-span {
-    font-size: 32px;
-    margin: 8px;
+hr {
+    border: 3px solid var(--fg);
+    border-radius: 50%;
+    corner-shape: bevel;
 }
 
 b {
@@ -70,12 +76,12 @@ b {
 }
 
 body.dark {
-    background-color: #0e1114;
-    color: #e8e6df;
+    background-color: var(--fg);
+    color: var(--bg);
 }
 
 body.dark .columns-container {
-    color: #e8e6df;
+    color: var(--bg);
 }
 
 
