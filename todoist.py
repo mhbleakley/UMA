@@ -56,20 +56,19 @@ class TodoistClient:
         html_string = "\n".join(html_lines)
         return html_string
 
-    def get_section(self, section_name: str) -> str:
-        print(f"Fetching section '{section_name}'...")
-
-        # Convert paginator to a flat list of Section objects
+    def _get_section_obj(self, section_name: str):
         sections = []
         for batch in self.api.get_sections():
-            sections.extend(batch)  # each batch is a list of Section objects
-
-        # Find the section by name
+            sections.extend(batch)
         section = next((s for s in sections if s.name.lower() == section_name.lower()), None)
         if section is None:
             raise ValueError(f"Section not found: {section_name}")
+        return section
 
-        # Fetch tasks for that section (paginator again)
+    def get_section(self, section_name: str) -> str:
+        print(f"Fetching section '{section_name}'...")
+        section = self._get_section_obj(section_name)
+
         tasks = []
         for batch in self.api.get_tasks(section_id=section.id):
             for t in batch:
@@ -79,10 +78,36 @@ class TodoistClient:
                     continue
                 tasks.append(t.content)
 
-        # Build HTML
         html_lines = ["<ul>"]
         for task_content in tasks:
             html_lines.append(f"<li>{task_content}</li>")
+        html_lines.append("</ul>")
+
+        return "\n".join(html_lines)
+
+    def get_days_old(self, section_name: str) -> str:
+        print(f"Fetching days-old section '{section_name}'...")
+        section = self._get_section_obj(section_name)
+
+        tasks = []
+        for batch in self.api.get_tasks(section_id=section.id):
+            for t in batch:
+                if t.parent_id is not None:
+                    continue
+                if t.completed_at is not None:
+                    continue
+                tasks.append(t)
+
+        today = date.today()
+        html_lines = ["<ul>"]
+        for t in tasks:
+            created = t.created_at
+            if isinstance(created, datetime):
+                created = created.date()
+            elif not isinstance(created, date):
+                created = datetime.fromisoformat(str(created)).date()
+            days_old = (today - created).days
+            html_lines.append(f"<li><b>{days_old} Days old:</b> {t.content}</li>")
         html_lines.append("</ul>")
 
         return "\n".join(html_lines)

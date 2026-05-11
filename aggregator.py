@@ -1,5 +1,5 @@
 from todoist import TodoistClient
-from google_calendar import CalendarClient
+# from google_calendar import CalendarClient
 import os
 import json
 from pathlib import Path
@@ -35,11 +35,14 @@ def update():
     grocery = i.get_section("GROCERY LIST")
     grocery = "<h1>Provisions</h1>\n" + grocery
 
-    c = CalendarClient()
-    c_events = c.get_upcoming_events_html()
-    c_events = "<h1>On the Morrow</h1>\n" + c_events
+    daysold = i.get_days_old("Days Old")
+    daysold = "<h1>Yuck</h1>\n" + daysold
 
-    compose_state(["martin", "izzy", "grocery", "upcoming"], [m_today, i_today, grocery, c_events])
+    # c = CalendarClient()
+    # c_events = c.get_upcoming_events_html()
+    # c_events = "<h1>On the Morrow</h1>\n" + c_events
+
+    compose_state(["martin", "izzy", "grocery", "daysold", "upcoming"], [m_today, i_today, grocery, daysold, ""])
 
 
 def main():

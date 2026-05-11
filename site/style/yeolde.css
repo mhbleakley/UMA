@@ -102,3 +102,8 @@ body.dark .columns-container {
     padding: 0 5px;
     /* optional horizontal spacing */
 }
+
+#grocery {
+    height: 50vh;
+    overflow: hidden;
+}
