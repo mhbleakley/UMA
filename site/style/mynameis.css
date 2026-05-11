@@ -12,6 +12,10 @@
     font-style: normal;
 }
 
+html {
+    cursor: none;
+}
+
 body {
     font-family: "farmhouse";
     background-color: white;

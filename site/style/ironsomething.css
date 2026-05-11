@@ -12,6 +12,10 @@
     font-style: normal;
 }
 
+html {
+    cursor: none;
+}
+
 body {
     font-family: "badwolf";
     background-color: white;

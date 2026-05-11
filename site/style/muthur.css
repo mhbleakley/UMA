@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+html {
+    cursor: none;
+}
+
 body {
     font-family: "Hyperspace";
     background-color: black;

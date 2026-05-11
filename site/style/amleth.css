@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+html {
+    cursor: none;
+}
+
 body {
     font-family: "norse";
     background-color: #20212b;
