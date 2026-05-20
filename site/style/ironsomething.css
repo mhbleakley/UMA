@@ -13,7 +13,9 @@
 }
 
 html {
+    height: 100%;
     cursor: none;
+    overflow: hidden;
 }
 
 body {

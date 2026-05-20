@@ -1,9 +1,7 @@
 (function () {
     const themes = [
         'amleth',
-        'ironsomething',
         'muthur',
-        'mynameis',
         'yeolde',
     ];
 
