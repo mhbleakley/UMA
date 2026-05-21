@@ -99,8 +99,16 @@ body.dark .columns-container {
     /* optional: ensure 25% */
     box-sizing: border-box;
     /* include padding/border in width */
-    padding: 0 5px;
+    padding: 0 10px;
     /* optional horizontal spacing */
+}
+
+.columns-container>div:not(:last-child) {
+    border-right: 2px solid var(--fg);
+}
+
+body.dark .columns-container>div:not(:last-child) {
+    border-right-color: var(--bg);
 }
 
 #grocery {

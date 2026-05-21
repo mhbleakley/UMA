@@ -1,0 +1,129 @@
+:root {
+    --heading-grocery: Rendezvous Transactions;
+    --heading-daysold: Ration Sols+;
+    --heading-upcoming: Next Sol;
+}
+
+@font-face {
+    font-family: "Nasalization";
+    src: url("fonts/nasalization/Nasalization Rg.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+    cursor: none;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Nasalization";
+    background-image: url("backgrounds/NASA-light.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #0B3D91;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0 0 8px 0;
+}
+
+ul {
+    margin: 14px;
+}
+
+li {
+    font-size: 20px;
+    margin: 6px;
+    line-height: 120%;
+}
+
+b {
+    font-size: 22px;
+}
+
+hr {
+    display: none;
+}
+
+#date {
+    border: 2px solid currentColor;
+    border-radius: 12px;
+    margin: 10px;
+    padding: 4px 16px;
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+body.dark #date {
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.events ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.events ul li {
+    margin-left: 0;
+    padding: 6px 8px;
+    font-size: 16px;
+    border: 2px solid currentColor;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+.events ul li b {
+    display: block;
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+body.dark {
+    background-image: url("backgrounds/NASA-dark.png");
+    color: white;
+}
+
+body.dark .columns-container {
+    color: white;
+}
+
+.columns-container {
+    display: flex;
+    width: 100%;
+    font-size: 22px;
+    gap: 10px;
+    padding: 0 10px 10px;
+    box-sizing: border-box;
+}
+
+.columns-container>div {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 2px solid currentColor;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+body.dark .columns-container>div {
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+#grocery-col {
+    padding: 0;
+}
+
+#grocery {
+    height: 50vh;
+    overflow: hidden;
+    padding: 8px;
+    border-bottom: 2px solid currentColor;
+}
+
+#daysold {
+    padding: 8px;
+}

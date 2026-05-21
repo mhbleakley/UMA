@@ -1,3 +1,9 @@
+:root {
+    --heading-grocery: Crew Requests;
+    --heading-daysold: Refrigeration;
+    --heading-upcoming: Missions;
+}
+
 @font-face {
     font-family: "Hyperspace";
     src: url("fonts/hyperspace/Hyperspace.otf") format("truetype");

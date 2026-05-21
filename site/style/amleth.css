@@ -1,3 +1,9 @@
+:root {
+    --heading-grocery: "Odin's Asks";
+    --heading-daysold: Gammel;
+    --heading-upcoming: Fore Valhalla;
+}
+
 @font-face {
     font-family: "norse";
     src: url("fonts/norse/Norse.otf") format("truetype");

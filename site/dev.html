@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>UMA — Dev</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="">
+    <style>
+        #dev-bar {
+            position: fixed;
+            top: 8px;
+            right: 12px;
+            z-index: 9999;
+            display: flex;
+            gap: 8px;
+            background: rgba(0,0,0,0.6);
+            padding: 6px 10px;
+            border-radius: 8px;
+        }
+        #dev-bar select {
+            font-size: 14px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="dev-bar">
+        <select id="theme-select">
+            <option value="amleth">amleth</option>
+            <option value="houston">houston</option>
+            <option value="ironsomething">ironsomething</option>
+            <option value="muthur">muthur</option>
+            <option value="mynameis">mynameis</option>
+            <option value="yeolde">yeolde</option>
+        </select>
+        <select id="mode-select">
+            <option value="light">light</option>
+            <option value="dark">dark</option>
+        </select>
+    </div>
+
+    <h1 id="date" style="text-align:center;"></h1>
+    <div class="columns-container">
+        <div id="grocery-col">
+            <div id="grocery"></div>
+            <div id="daysold"></div>
+        </div>
+        <div id="martin"></div>
+        <div id="izzy"></div>
+        <div id="upcoming" class="events"></div>
+    </div>
+
+    <script src="./scripts/date.js" defer></script>
+    <script src="./scripts/update.js" defer></script>
+    <script type="module">
+        const themeSelect = document.getElementById('theme-select');
+        const modeSelect = document.getElementById('mode-select');
+        const stylesheet = document.getElementById('theme-stylesheet');
+
+        function applyTheme(theme) {
+            stylesheet.onload = () => applyHeadingOverrides();
+            stylesheet.href = `./style/${theme}.css`;
+            localStorage.setItem('dev-theme', theme);
+        }
+
+        function applyMode(mode) {
+            document.body.classList.toggle('dark', mode === 'dark');
+            localStorage.setItem('dev-mode', mode);
+        }
+
+        const savedTheme = localStorage.getItem('dev-theme') || 'yeolde';
+        const savedMode = localStorage.getItem('dev-mode') || 'light';
+        themeSelect.value = savedTheme;
+        modeSelect.value = savedMode;
+        applyTheme(savedTheme);
+        applyMode(savedMode);
+
+        themeSelect.addEventListener('change', () => applyTheme(themeSelect.value));
+        modeSelect.addEventListener('change', () => applyMode(modeSelect.value));
+    </script>
+
+</body>
+
+</html>
